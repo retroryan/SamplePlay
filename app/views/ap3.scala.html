@@ -1,0 +1,9 @@
+@import tags._
+
+@(airports: List[models.Airport])
+
+<ul>
+    @for((airport,indx) <- airports.zipWithIndex) {
+        @displayAirport(airport,indx)
+    }
+</ul>

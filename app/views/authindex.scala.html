@@ -1,0 +1,13 @@
+@(session: play.mvc.Http.Session, message:String)
+
+<h2>@message</h2>
+
+@if(session.get("username") != null) {
+    <li><H2>@session.get("username")</H2></li>
+    <li><a href='@routes.AuthController.authlogout()'>Logout</a></li>
+} else {
+    <H2>No User Found</H2>
+    <li><a href='@routes.AuthController.authlogin()'>Good Login</a></li>
+    <li><a href='@routes.AuthController.badlogin()'>Bad Login</a></li>
+    <li><a href='@routes.AuthController.badlogin2()'>Another Bad Login</a></li>
+}

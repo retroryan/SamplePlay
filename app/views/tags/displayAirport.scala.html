@@ -1,0 +1,11 @@
+@(airport: models.Airport, indx:Int)
+
+@if(indx%2 == 0) {
+    <p style="color:blue;">
+} else {
+  <p style="color:black;">
+}
+    Airport: @airport.getAirportCode() @airport.getAirportName()</br>
+    Location: @airport.getCity(), @airport.getState(), @airport.getCountry()</br>
+    lat,long: @airport.getLat(), @airport.getLng
+</p>

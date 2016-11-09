@@ -1,0 +1,16 @@
+@(airports: List[models.Airport])
+
+@display(airport: models.Airport) = {
+<p>
+    Airport: @airport.getAirportCode() @airport.getAirportName()</br>
+    Location: @airport.getCity(), @airport.getState(), @airport.getCountry()</br>
+    lat,long: @airport.getLat(), @airport.getLng
+</p>
+}
+
+<ul>
+    @for(airport <- airports) {
+        @display(airport)
+    }
+</ul>
+

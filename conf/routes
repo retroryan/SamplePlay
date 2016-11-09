@@ -1,0 +1,54 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+GET     /basic                      controllers.BasicController.index
+
+# An example controller showing a sample home page
+GET     /                           controllers.AirportController.airports
+GET     /findAirport/:iata          controllers.AirportController.findAirport(iata)
+
+# Spanning several path elements
+GET     /findAirportCodes/*iata          controllers.AirportController.findAirportCodes(iata)
+
+# Extract a parameter from the request: /clients?page=3
+GET     /getAirports          controllers.AirportController.getAirports(count:String ?= "10")
+GET     /getAP2               controllers.AirportController.getAP2(count:Int ?= 10)
+GET     /getAP3               controllers.AirportController.getAP3(count:Int ?= 10)
+
+
+GET     /tagtest               controllers.AirportController.tagtest()
+
+POST     /jsonTest             controllers.AirportController.jsonTest()
+
+POST     /jsonPerson           controllers.AirportController.jsonPerson()
+
+GET     /getAirportsJson        controllers.AirportController.getAirportsJson()
+
+
+GET     /demo                       controllers.DemosController.index()
+GET     /demo/findAirport/:iata     controllers.DemosController.findAirport(iata)
+GET     /demo/clear                 controllers.DemosController.clear()
+
+GET     /ws/getAirport           controllers.WSDemoController.getAirport()
+GET     /ws/getAirports          controllers.WSDemoController.getAirports()
+GET     /ws/getWebsite           controllers.WSDemoController.getWebsite()
+GET     /ws/fetchTweets          controllers.WSDemoController.fetchTweets()
+GET     /ws/callActor            controllers.WSDemoController.callActor()
+GET     /ws/fetchTweetsFromActor  controllers.WSDemoController.fetchTweetsFromActor()
+
+
+GET     /authlogin               controllers.AuthController.authlogin()
+GET     /badlogin                controllers.AuthController.badlogin()
+GET     /badlogin2                controllers.AuthController.badlogin2()
+GET     /authlogout              controllers.AuthController.authlogout()
+GET     /authindex              controllers.AuthController.index()
+
+
+# An example controller showing how to use dependency injection
+GET     /count                      controllers.CountController.count
+# An example controller showing how to write asynchronous code
+GET     /message                    controllers.AsyncController.message
+
+# Map static resources from the /public folder to the /assets URL path
+GET     /assets/*file               controllers.Assets.versioned(path="/public", file: Asset)

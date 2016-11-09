@@ -1,0 +1,17 @@
+
+@(uri: String)
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ePlay - Page Not Found</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <link rel="stylesheet" type="text/css" media="screen" href='@routes.Assets.versioned("stylesheets/error.css")'>
+</head>
+<body>
+  <div id="container">
+    <a id="logo" href="/">Return Home></a>
+    <h1>Something went wrong.</h1>
+    <p class="error">"@uri" not found!</p>
+  </div>
+</body>
+</html>

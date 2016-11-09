@@ -30,6 +30,7 @@ public class Module extends AbstractModule implements AkkaGuiceSupport {
 
         bind(StockWS.class).asEagerSingleton();
 
+        bindActor(StockActor.class, "stock-actor");
     }
 
 }

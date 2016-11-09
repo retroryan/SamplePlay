@@ -2,7 +2,7 @@ logs
 RUNNING_PID
 .sbtserver
 project/.sbtserver
-
+project/.sbtserver.lock
 
 # play
 .history
